@@ -17,8 +17,8 @@ public class practice {
 					System.out.println("수량을 입력하세요");
 					Scanner sc3 = new Scanner(System.in);
 					try {
-						int i1 = sc3.nextInt();
-						System.out.println(name + "님, 주문하신 커피 " + i1 + "잔 나왔습니다. 다음 손님 들어오세요!" );
+						int numCups = sc3.nextInt();
+						System.out.println(name + "님, 주문하신 커피 " + numCups + "잔 나왔습니다. 다음 손님 들어오세요!" );
 						//sc3.close();
 						break;
 					} catch (Exception e) {
