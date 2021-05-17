@@ -1,10 +1,11 @@
+package Day6;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-class Initialize {
+class practice {
 	public static void main(String[] args) {		
 		try {
 			BufferedReader br = new BufferedReader(new FileReader("data.txt"));
@@ -21,7 +22,9 @@ class Initialize {
 				list2.add(list);
 			}
 			br.close();
-			System.out.println(list2);
+			for (int i = 0; i<list2.size(); i++) {
+				System.out.println(list2.get(i));
+			}
 			
 		} catch (IOException ie) {
 			System.out.println(ie);
