@@ -75,7 +75,7 @@ public class ClientManagement implements Serializable {
 		if (count <= 0) {
 				System.out.println("회원정보가 없습니다.");
 			} else {
-						for(int i=0;i< count ;i++) {
+						for(int i=0;i< count;i++) {
 							ccs = clientinfolist.get(i);
 							
 							System.out.println("*****************************************");
