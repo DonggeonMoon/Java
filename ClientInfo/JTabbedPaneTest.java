@@ -1,39 +1,35 @@
 package ClientInfo;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JTabbedPane;
-import javax.swing.JTable;
-import javax.swing.ListSelectionModel;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
-import javax.swing.table.DefaultTableModel;
-import java.awt.*;
+import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
-import java.util.ArrayList;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
+import javax.swing.ListSelectionModel;
+import javax.swing.SwingConstants;
 
 public  class JTabbedPaneTest extends JFrame implements ActionListener, WindowListener {
 		static JTabbedPane tab;
 		static JPanel1 j1;
 		static JButton btn;
 		int cnt = 0;
-	    public void setDefaultCloseOperation(int arg0) {
+	    @Override
+		public void setDefaultCloseOperation(int arg0) {
 	    	super.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	    }
 	    public JTabbedPaneTest() {
 	        super("고객정보 데이타");			      
 	        try {
-		        tab = new JTabbedPane(JTabbedPane.RIGHT);
+		        tab = new JTabbedPane(SwingConstants.RIGHT);
 		        JPanel one = new JPanel();
 		        JButton btn  = new JButton("파일변환");
 		        j1 = new JPanel1();
