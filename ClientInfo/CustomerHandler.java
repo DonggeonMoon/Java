@@ -1,10 +1,5 @@
 package ClientInfo;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JTabbedPane;
-import ClientInfo.JTable1; 
-import java.awt.BorderLayout;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -42,51 +37,51 @@ public class CustomerHandler extends Exception {
 				questionView();
 				switch(str.charAt(0)){
 				case 'O' :
-						 clm.uploadObject();
+						 ClientManagement.uploadObject();
 						break;
 				case 'J' :
-					clm.downloadObject();
+					ClientManagement.downloadObject();
 						break;
 				case 'I' :
 						System.out.println(" 고객의 정보를 입력해주세요.");
-						clm.saveClientInfo();
+						ClientManagement.saveClientInfo();
 						break;
 				case 'D' :
-						index = clm.searchClientInfoByName();
+						index = ClientManagement.searchClientInfoByName();
 						if (index >= 0) {
 							System.out.printf(" 고객을 삭제하겠습니다. ");
-							clm.deleteClientInfo(index);
+							ClientManagement.deleteClientInfo(index);
 							System.out.println(" 삭제되었습니다. ");
 						}else {
 							System.out.println(" 없는 고객정보 입니다.");
 						}
 							break;
 				case 'U' :
-						index = clm.searchClientInfoByName();
+						index = ClientManagement.searchClientInfoByName();
 						if (index >= 0) {
-							clm.byflag = true;
-							clm.sexflag = true;
-							clm.updateClientInfo(index);										  
+							ClientManagement.byflag = true;
+							ClientManagement.sexflag = true;
+							ClientManagement.updateClientInfo(index);										  
 						}else {
 							System.out.println("고객 정보가 없습니다.");
 						}
 						break;
 				case 'S' :
-						index = clm.searchClientInfoByName();
+						index = ClientManagement.searchClientInfoByName();
 						if (index >= 0) {
-							clm.printClientInfo(index);
+							ClientManagement.printClientInfo(index);
 						}else {
 							System.out.println("고객정보가 없습니다.");
 						}
 						break;
 				case 'A' :									 
-					clm.printAllClientInfo();
+					ClientManagement.printAllClientInfo();
 						break;
 				case 'C' :
 						if (index <0) {
 							System.out.println(" 현재 고객이 없습니다. ");
 						}else {
-							clm.printClientInfo(index);
+							ClientManagement.printClientInfo(index);
 						}
 						break;
 				case 'P' :
@@ -95,7 +90,7 @@ public class CustomerHandler extends Exception {
 							System.out.println("이전데이타가 존재하지 않습니다.");
 						}else {
 							index--;
-							clm.printClientInfo(index);
+							ClientManagement.printClientInfo(index);
 						}
 						break;
 				case 'N':
@@ -104,7 +99,7 @@ public class CustomerHandler extends Exception {
 							System.out.println("더이상의 고객은 존재하지 않습니다.");
 						}else {
 							index++;
-							clm.printClientInfo(index);											
+							ClientManagement.printClientInfo(index);											
 						}
 						break;
 				case 'Q' :
@@ -115,10 +110,10 @@ public class CustomerHandler extends Exception {
 					    jt.setDefaultCloseOperation(EXIT_ON_CLOSE);
 					    break;
 				case 'F' :
-					clm.uploadFile();
+					ClientManagement.uploadFile();
 					 break;
 				case 'R' :
-					clm.downloadFile();
+					ClientManagement.downloadFile();
 					break;
 				default :
 						questionView();
