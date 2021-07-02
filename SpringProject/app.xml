@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="pool" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+  <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" /> 
+  <property name="url" value="jdbc:oracle:thin:@localhost" /> 
+  <property name="username" value="scott" /> 
+  <property name="password" value="tiger" /> 
+  <property name="initialSize" value="3" /> 
+  <property name="maxActive" value="20" /> 
+  <property name="maxIdle" value="60000" /> 
+<!--  1000 1초 --> 
+</bean>
+<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+  <property name="dataSource" ref="pool" /> 
+  </bean>
+<bean id="dao" class="spring_app09.service.EmpDao">
+  <property name="jdbcTemplate" ref="jdbcTemplate" /> 
+  </bean>
+</beans>
